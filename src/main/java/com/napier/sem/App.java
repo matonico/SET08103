@@ -141,7 +141,8 @@ public class App
                             + emp.title + "\n"
                             + "Salary:" + emp.salary + "\n"
                             + "Department: "+ emp.dept_name + "\n"
-                            + "Manager: " + emp.manager + "\n");
+                            + "Manager: " + emp.manager + "\n"
+                            + "New feature test!");
         }
     }
 }
