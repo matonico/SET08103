@@ -1,0 +1,30 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+
+class App{
++connect()
++disconnect()
++getEmployee()
++displayEmployee(Employee)
++getSalariesByTitle(String)
++printSalaries(ArrayList<Employee>)
++main(String[])
++ArrayList<Employee> allSalaries
+}
+
+class Employee
+{
+ +int emp_no
+ +String first_name
+ +String last_name
+ +String title
+ +int salary
+ +String dept_name
+ +String manager
+}
+
+App -> Employee
+App "creates" ..> Employee
+
+@enduml
