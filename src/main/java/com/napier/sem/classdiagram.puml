@@ -11,6 +11,8 @@ class App{
 +printSalaries(ArrayList<Employee>)
 +main(String[])
 +ArrayList<Employee> allSalaries
++Department Department(String)
++ArrayList<Employee> getSalariesByDepartment(Department)
 }
 
 class Employee
@@ -24,7 +26,16 @@ class Employee
  +String manager
 }
 
-App -> Employee
-App "creates" ..> Employee
+class Department
+{
++String dept_no
++String dept_name
++Employee manager
+}
 
+App ..> Employee
+App "creates" ..> Employee
+Department "1 "*--> "1 "Employee
+Employee "1 "*--> "1 "Department
+App .> Department
 @enduml
