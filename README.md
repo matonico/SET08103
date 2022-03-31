@@ -3,5 +3,5 @@
 ![LICENSE](https://img.shields.io/github/license/matonico/SET08103?style=for-the-badge)
 ![release](https://img.shields.io/github/v/release/matonico/SET08103)
 ![GitHub Workflow Status (branch)](https://img.shields.io/github/checks-status/matonico/SET08103/develop)
-
+[![codecov](https://codecov.io/gh/matonico/SET08103/branch/master/graph/badge.svg?token=VU8I9RTDVU)](https://codecov.io/gh/matonico/SET08103)
 Feature
