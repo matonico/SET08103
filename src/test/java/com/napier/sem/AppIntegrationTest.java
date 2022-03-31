@@ -28,4 +28,11 @@ public class AppIntegrationTest
         assertEquals(emp.first_name, "Ronghao");
         assertEquals(emp.last_name, "Garigliano");
     }
+    @Test
+    void testGetDepartment()
+    {
+        Department dep = app.getDepartment("Sales");
+        assertEquals(dep.dept_name,"Sales");
+        assertEquals(dep.dept_no,"d007");
+    }
 }

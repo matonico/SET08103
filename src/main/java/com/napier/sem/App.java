@@ -164,16 +164,8 @@ public class App
             ResultSet rset = stmt.executeQuery(strSelect);
             // Extract employee information
             ArrayList<Employee> employees = new ArrayList<Employee>();
-            while (rset.next())
-            {
-                Employee emp = new Employee();
-                emp.emp_no = rset.getInt("employees.emp_no");
-                emp.first_name = rset.getString("employees.first_name");
-                emp.last_name = rset.getString("employees.last_name");
-                emp.salary = rset.getInt("salaries.salary");
-                employees.add(emp);
-            }
-            return employees;
+
+            return addEmployeesToList(employees,rset);
         }
         catch (Exception e)
         {
@@ -206,16 +198,7 @@ public class App
             ResultSet rset = stmt.executeQuery(strSelect);
             // Extract employee information
             ArrayList<Employee> employees = new ArrayList<Employee>();
-            while (rset.next())
-            {
-                Employee emp = new Employee();
-                emp.emp_no = rset.getInt("employees.emp_no");
-                emp.first_name = rset.getString("employees.first_name");
-                emp.last_name = rset.getString("employees.last_name");
-                emp.salary = rset.getInt("salaries.salary");
-                employees.add(emp);
-            }
-            return employees;
+            return addEmployeesToList(employees,rset);
         }
         catch (Exception e)
         {
@@ -297,16 +280,8 @@ public class App
             ResultSet rset = stmt.executeQuery(strSelect);
             // Extract employee information
             ArrayList<Employee> employees = new ArrayList<Employee>();
-            while (rset.next())
-            {
-                Employee emp = new Employee();
-                emp.emp_no = rset.getInt("employees.emp_no");
-                emp.first_name = rset.getString("employees.first_name");
-                emp.last_name = rset.getString("employees.last_name");
-                emp.salary = rset.getInt("salaries.salary");
-                employees.add(emp);
-            }
-            return employees;
+           return addEmployeesToList(employees,rset);
+
         }
         catch (Exception e)
         {
@@ -314,5 +289,17 @@ public class App
             System.out.println("Failed to get salary details");
             return null;
         }
+    }
+    public ArrayList<Employee> addEmployeesToList(ArrayList<Employee> e, ResultSet rset) throws SQLException {
+        while (rset.next())
+        {
+            Employee emp = new Employee();
+            emp.emp_no = rset.getInt("employees.emp_no");
+            emp.first_name = rset.getString("employees.first_name");
+            emp.last_name = rset.getString("employees.last_name");
+            emp.salary = rset.getInt("salaries.salary");
+            e.add(emp);
+        }
+        return e;
     }
 }
